@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from levenshtein import views
+from levenshtein.views import LevenshteinView
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', LevenshteinView.as_view(), name='index'),
 ]
