@@ -1,4 +1,5 @@
-{% block title %}Levenshtein Example{% endblock %}
+{% load i18n %} 
+{% block title %}{% trans "Levenshtein Example" %}{% endblock %}
 
 {% block content %}
 	<form action="." method="post">{% csrf_token %}
@@ -9,7 +10,17 @@
 	</form>
 
 	{% for levenshtein in levenshtein_objects %}
-	    <p>Text 1:&nbsp;<strong>{{ levenshtein.text_1 }}</strong>&nbsp;&nbsp;Text 2:&nbsp;<strong>{{ levenshtein.text_2 }}</strong>&nbsp;&nbsp;Levenshtein Distance:&nbsp;<strong>{{ levenshtein.distance }}</strong>&nbsp;&nbsp;Levenshtein Ratio:&nbsp;<strong>{{ levenshtein.ratio }}</strong></p>
+
+	    <p>{% trans "Text 1" %}:&nbsp;
+	    	<strong>{{ levenshtein.text_1 }}</strong>
+	    	&nbsp;&nbsp;{% trans "Text 2" %}:&nbsp;
+	    	<strong>{{ levenshtein.text_2 }}</strong>
+	    	&nbsp;&nbsp;{% trans "Levenshtein Value" %}:&nbsp;
+	    	<strong>{{ levenshtein.levenshtein_value }}</strong>
+	    	&nbsp;&nbsp;{% trans "Levenshtein Ratio" %}:&nbsp;
+	    	<strong>{{ levenshtein.levenshtein_ratio }}</strong>
+	    </p>
+
 	{% endfor %}
 
 {% endblock %}

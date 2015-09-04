@@ -13,7 +13,8 @@ class Migration(SchemaMigration):
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('text_1', self.gf('django.db.models.fields.TextField')()),
             ('text_2', self.gf('django.db.models.fields.TextField')()),
-            ('levenshtein_value', self.gf('django.db.models.fields.IntegerField')(null=True, blank=True)),
+            ('distance', self.gf('django.db.models.fields.IntegerField')(null=True, blank=True)),
+            ('ratio', self.gf('django.db.models.fields.FloatField')(null=True, blank=True)),
             ('created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
         ))
         db.send_create_signal(u'levenshtein', ['Levenshtein'])
@@ -28,8 +29,9 @@ class Migration(SchemaMigration):
         u'levenshtein.levenshtein': {
             'Meta': {'object_name': 'Levenshtein'},
             'created': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
+            'distance': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'levenshtein_value': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
+            'ratio': ('django.db.models.fields.FloatField', [], {'null': 'True', 'blank': 'True'}),
             'text_1': ('django.db.models.fields.TextField', [], {}),
             'text_2': ('django.db.models.fields.TextField', [], {})
         }
