@@ -8,20 +8,15 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'Levenshtein'
-        db.create_table(u'levenshtein_levenshtein', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('text_1', self.gf('django.db.models.fields.TextField')()),
-            ('text_2', self.gf('django.db.models.fields.TextField')()),
-            ('levenshtein_value', self.gf('django.db.models.fields.IntegerField')(null=True, blank=True)),
-            ('created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
-        ))
-        db.send_create_signal(u'levenshtein', ['Levenshtein'])
+        # Adding field 'Levenshtein.levenshtein_ratio'
+        db.add_column(u'levenshtein_levenshtein', 'levenshtein_ratio',
+                      self.gf('django.db.models.fields.FloatField')(null=True, blank=True),
+                      keep_default=False)
 
 
     def backwards(self, orm):
-        # Deleting model 'Levenshtein'
-        db.delete_table(u'levenshtein_levenshtein')
+        # Deleting field 'Levenshtein.levenshtein_ratio'
+        db.delete_column(u'levenshtein_levenshtein', 'levenshtein_ratio')
 
 
     models = {
@@ -29,6 +24,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Levenshtein'},
             'created': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'levenshtein_ratio': ('django.db.models.fields.FloatField', [], {'null': 'True', 'blank': 'True'}),
             'levenshtein_value': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
             'text_1': ('django.db.models.fields.TextField', [], {}),
             'text_2': ('django.db.models.fields.TextField', [], {})

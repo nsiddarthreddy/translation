@@ -8,24 +8,19 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Deleting field 'Levenshtein.levenshtein_radio_info'
-        db.delete_column(u'levenshtein_levenshtein', 'levenshtein_radio_info')
-
-        # Adding field 'Levenshtein.levenshtein_ratio'
-        db.add_column(u'levenshtein_levenshtein', 'levenshtein_ratio',
-                      self.gf('django.db.models.fields.FloatField')(null=True, blank=True),
-                      keep_default=False)
-
+        # Adding model 'Levenshtein'
+        db.create_table(u'levenshtein_levenshtein', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('text_1', self.gf('django.db.models.fields.TextField')()),
+            ('text_2', self.gf('django.db.models.fields.TextField')()),
+            ('levenshtein_value', self.gf('django.db.models.fields.IntegerField')(null=True, blank=True)),
+            ('created', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
+        ))
+        db.send_create_signal(u'levenshtein', ['Levenshtein'])
 
     def backwards(self, orm):
-        # Adding field 'Levenshtein.levenshtein_radio_info'
-        db.add_column(u'levenshtein_levenshtein', 'levenshtein_radio_info',
-                      self.gf('django.db.models.fields.FloatField')(null=True, blank=True),
-                      keep_default=False)
-
-        # Deleting field 'Levenshtein.levenshtein_ratio'
-        db.delete_column(u'levenshtein_levenshtein', 'levenshtein_ratio')
-
+        # Deleting model 'Levenshtein'
+        db.delete_table(u'levenshtein_levenshtein')
 
     models = {
         u'levenshtein.levenshtein': {

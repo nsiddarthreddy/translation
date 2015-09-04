@@ -6,5 +6,5 @@ class LevenshteinForm(forms.ModelForm):
     class Meta:
         model = Levenshtein
         exclude = (
-            'levenshtein_value', 'created_date',
+            'levenshtein_value', 'levenshtein_ratio', 'created_date',
         )
