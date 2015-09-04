@@ -1,7 +1,8 @@
 from django.views.generic import TemplateView
+
 from levenshtein.models import Levenshtein
 from levenshtein.forms import LevenshteinForm
-from levenshtein.utils import levenshte_in_distance
+from levenshtein.utils import levenshte_in_distance, levenshte_ratio
 
 
 class LevenshteinView(TemplateView):
@@ -18,7 +19,9 @@ class LevenshteinView(TemplateView):
         self.form = LevenshteinForm(request.POST)
         if self.form.is_valid():
             levenshtein = self.form.save()
-            levenshtein.levenshtein_value = levenshte_in_distance(
+            levenshtein.distance = levenshte_in_distance(
+                levenshtein.text_1, levenshtein.text_2)
+            levenshtein.ratio = levenshte_ratio(
                 levenshtein.text_1, levenshtein.text_2)
             levenshtein.save()
         return super(LevenshteinView, self).get(

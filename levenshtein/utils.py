@@ -1,3 +1,5 @@
+import Levenshtein
+
 
 def levenshte_in_distance(s1, s2):
     if len(s1) > len(s2):
@@ -14,3 +16,8 @@ def levenshte_in_distance(s1, s2):
                                              new_distances[-1])))
         distances = new_distances
     return distances[-1]
+
+
+def levenshte_ratio(s1, s2):
+    ratio = Levenshtein.ratio(s1, s2)
+    return ratio
