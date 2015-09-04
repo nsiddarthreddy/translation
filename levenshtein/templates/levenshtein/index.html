@@ -9,7 +9,7 @@
 	</form>
 
 	{% for levenshtein in levenshtein_objects %}
-	    <p>Text 1:&nbsp;<strong>{{ levenshtein.text_1 }}</strong>&nbsp;&nbsp;Text 2:&nbsp;<strong>{{ levenshtein.text_2 }}</strong>&nbsp;&nbsp;Levenshtein Value:&nbsp;<strong>{{ levenshtein.levenshtein_value }}</strong></p>
+	    <p>Text 1:&nbsp;<strong>{{ levenshtein.text_1 }}</strong>&nbsp;&nbsp;Text 2:&nbsp;<strong>{{ levenshtein.text_2 }}</strong>&nbsp;&nbsp;Levenshtein Distance:&nbsp;<strong>{{ levenshtein.distance }}</strong>&nbsp;&nbsp;Levenshtein Ratio:&nbsp;<strong>{{ levenshtein.ratio }}</strong></p>
 	{% endfor %}
 
 {% endblock %}

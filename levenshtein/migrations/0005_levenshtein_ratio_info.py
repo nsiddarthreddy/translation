@@ -7,10 +7,10 @@ class Migration(DataMigration):
 
     def forwards(self, orm):
         "Write your forwards methods here."
-        levenshteins = orm.Levenshtein.objects.filter(levenshtein_ratio=None)
+        levenshteins = orm.Levenshtein.objects.filter(ratio=None)
         for levenshtein in levenshteins:
-            levenshtein.levenshtein_ratio = levenshte_ratio(levenshtein.text_1,
-                                                            levenshtein.text_2)
+            levenshtein.ratio = levenshte_ratio(levenshtein.text_1,
+                                                levenshtein.text_2)
             levenshtein.save()
 
     def backwards(self, orm):
