@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+
 from levenshtein.models import Levenshtein
 from levenshtein.forms import LevenshteinForm
 from levenshtein.utils import levenshte_in_distance
