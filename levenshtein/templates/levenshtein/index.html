@@ -1,0 +1,16 @@
+{% block title %}Levenshtein Example{% endblock %}
+
+{% block content %}
+	<form action="." method="post">{% csrf_token %}
+		<br>
+		{{ form.as_p }}
+		<br>
+		<input type="submit" value="Submit"/>
+	</form>
+
+	{% for levenshtein in levenshtein_objects %}
+	    <p>Text 1:&nbsp;<strong>{{ levenshtein.text_1 }}</strong>&nbsp;&nbsp;Text 2:&nbsp;<strong>{{ levenshtein.text_2 }}</strong>&nbsp;&nbsp;Levenshtein Value:&nbsp;<strong>{{ levenshtein.levenshtein_value }}</strong></p>
+	{% endfor %}
+
+{% endblock %}
+
