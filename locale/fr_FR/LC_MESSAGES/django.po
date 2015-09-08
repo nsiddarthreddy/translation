@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Reddy Siddarth Nomula <siddarth@transifex.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Translation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-04 15:11-0700\n"
+"PO-Revision-Date: 2015-09-08 16:28+0000\n"
+"Last-Translator: Reddy Siddarth Nomula <siddarth@transifex.com>\n"
+"Language-Team: French (France) (http://www.transifex.com/translation-10/translation-4/language/fr_FR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: levenshtein/templates/levenshtein/index.html:2
+msgid "Levenshtein Example"
+msgstr "Levenshtein exemple"
+
+#: levenshtein/templates/levenshtein/index.html:14
+msgid "Text 1"
+msgstr "texte 1"
+
+#: levenshtein/templates/levenshtein/index.html:16
+msgid "Text 2"
+msgstr "texte 2"
+
+#: levenshtein/templates/levenshtein/index.html:18
+msgid "Levenshtein Value"
+msgstr "Levenshtein valeur"
+
+#: levenshtein/templates/levenshtein/index.html:20
+msgid "Levenshtein Ratio"
+msgstr "Levenshtein rapport"

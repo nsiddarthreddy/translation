@@ -1,5 +1,9 @@
+<html>
 {% load i18n %} 
-{% block title %}{% trans "Levenshtein Example" %}{% endblock %}
+
+<head>
+	{% block title %}{% trans "Levenshtein Example" %}{% endblock %}
+</head>
 
 {% block content %}
 	<form action="." method="post">{% csrf_token %}
@@ -8,7 +12,20 @@
 		<br>
 		<input type="submit" value="Submit"/>
 	</form>
-
+	<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}" />
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Go" />
+	</form>
 	{% for levenshtein in levenshtein_objects %}
 
 	    <p>{% trans "Text 1" %}:&nbsp;
@@ -16,13 +33,13 @@
 	    	&nbsp;&nbsp;{% trans "Text 2" %}:&nbsp;
 	    	<strong>{{ levenshtein.text_2 }}</strong>
 	    	&nbsp;&nbsp;{% trans "Levenshtein Value" %}:&nbsp;
-	    	<strong>{{ levenshtein.levenshtein_value }}</strong>
+	    	<strong>{{ levenshtein.distance }}</strong>
 	    	&nbsp;&nbsp;{% trans "Levenshtein Ratio" %}:&nbsp;
-	    	<strong>{{ levenshtein.levenshtein_ratio }}</strong>
+	    	<strong>{{ levenshtein.ratio }}</strong>
 	    </p>
 
 	{% endfor %}
 
 {% endblock %}
-
+</html>
 
