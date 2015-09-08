@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-04 15:11-0700\n"
+"POT-Creation-Date: 2015-09-08 17:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,22 +17,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: levenshtein/templates/levenshtein/index.html:2
+#: levenshtein/templates/levenshtein/index.html:5
 msgid "Levenshtein Example"
 msgstr ""
 
-#: levenshtein/templates/levenshtein/index.html:14
+#: levenshtein/templates/levenshtein/index.html:31
 msgid "Text 1"
 msgstr ""
 
-#: levenshtein/templates/levenshtein/index.html:16
+#: levenshtein/templates/levenshtein/index.html:33
 msgid "Text 2"
 msgstr ""
 
-#: levenshtein/templates/levenshtein/index.html:18
+#: levenshtein/templates/levenshtein/index.html:35
 msgid "Levenshtein Value"
 msgstr ""
 
-#: levenshtein/templates/levenshtein/index.html:20
+#: levenshtein/templates/levenshtein/index.html:37
 msgid "Levenshtein Ratio"
 msgstr ""

@@ -23,10 +23,10 @@ class Migration(DataMigration):
                 'auto_now_add': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {
                 'primary_key': 'True'}),
-            'levenshtein_radio_info': ('django.db.models.fields.FloatField',
-                                       [], {'null': 'True', 'blank': 'True'}),
-            'levenshtein_value': ('django.db.models.fields.IntegerField',
-                                  [], {'null': 'True', 'blank': 'True'}),
+            'ratio': ('django.db.models.fields.FloatField',
+                      [], {'null': 'True', 'blank': 'True'}),
+            'distance': ('django.db.models.fields.IntegerField',
+                         [], {'null': 'True', 'blank': 'True'}),
             'text_1': ('django.db.models.fields.TextField', [], {}),
             'text_2': ('django.db.models.fields.TextField', [], {})
         }
